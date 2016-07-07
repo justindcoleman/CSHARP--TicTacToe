@@ -16,12 +16,15 @@ namespace TicTacToe
 
             while (!gameOver)
             {
+                int counter = 1;
+
                 #region fill board
                 for (int i = 0; i < 3; i++)
                 {
                     for (int j = 0; j < 3; j++)
                     {
-                        gameBoard[i, j] = " ";
+                        gameBoard[i, j] = counter.ToString();
+                        counter++;
                     }
                 }
                 #endregion
@@ -56,14 +59,14 @@ namespace TicTacToe
                 Console.ReadKey();
             }
         }
-        static void validChoice(ref string gameBoard, ref string activePlayer)
+        static void validChoice(ref string[,] gameBoard, ref string activePlayer)
         {
             Console.WriteLine("Please choose a location: ");
             int playerChoiceFunc;
             string stringChoice = Console.ReadLine();
             if (int.TryParse(stringChoice, out playerChoiceFunc))
             {
-                if (gameBoard[playerChoiceFunc] != ' ')
+                if (gameBoard[playerChoiceFunc] != " ")
                 {
                     Console.WriteLine("That choice is invalid, please try again.");
                 }
