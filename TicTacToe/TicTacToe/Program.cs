@@ -69,24 +69,15 @@ namespace TicTacToe
                 }
                 else if ((playerChoiceFunc >= 0) && (playerChoiceFunc <= 8))
                 {
-                    
-                    if (activePlayer == "X")
-                    {
-                        gameBoard[playerChoiceFunc] = activePlayer; //this might be trying to change a string into int rather than swapping strings?
-                        Console.WriteLine("swap array space for X");
-                    }
-                    else if (activePlayer == "O")
-                    {
-                        Console.WriteLine("swap array space for O");
-                    }
-                    else
-                    {
-                        Console.WriteLine("You should not been seeing this message from the validChoice function!");
-                        Console.ReadKey();
-                    }
+                    gameBoard[playerChoiceFunc] = activePlayer; //this might be trying to change a string into int rather than swapping strings?
+                }
+                else
+                {
+                    Console.WriteLine("Pick a location between 0 and 8!");
+                    Console.ReadKey();
+                }
                 }
             }
+
         }
     }
-}
-
